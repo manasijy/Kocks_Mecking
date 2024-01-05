@@ -1,4 +1,6 @@
 # Kocks_Mecking
 KM SH
-This folder was made long back to plot Kocks-Mecking plots
-This needs to be checked and updated
+The file KocksMeckingPlot_movingLineFit.m differentiates the true stress-true plastic strain data to plot strain hardening rate vs (sigma-sigma_y) plot.
+The method followed here is a 4 point moving linear fit to determine the slope of the true stress-true plastic strain curve. For data collected at high acquisition rate, there is a lot of fluctuation in the stress strain data which leads to severly fluctuating strain hardening curve. The method applied in this script removews those fluctuations. The k value can be increased if k=4 is not leading to a smooth curve. An example test data is provided in this repo.
+The strain hardening rate obtained through this script is closer to actual value, which is not obtained if one uses a fitting curve on true stress-true plastic strain data. In my another repo - 'tensile', I have used a modified polynomial functions to fit the data and then differentiate the function to get smooth strain hardenign curve. And the polynomial function there could be adjusted to get a better fit on the experimental data. However, this present script is free from this fitting issue because it directly determines the slope from the experimental data.
+
